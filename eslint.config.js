@@ -43,18 +43,7 @@ export default [
       ]
     }
   },
-  {
-    files: ['**/*.html'],
-    languageOptions: {
-      parser: angularTemplateParser
-    },
-    plugins: {
-      '@angular-eslint/template': angularTemplatePlugin
-    },
-    rules: {
-      ...angularTemplatePlugin.configs.recommended.rules
-    }
-  },
+  {    files: ['**/*.html'],    languageOptions: {      parser: angularTemplateParser,      parserOptions: {        project: ['./tsconfig.json', './tsconfig.app.json', './tsconfig.spec.json'],        ecmaVersion: 'latest',        sourceType: 'module'      }    },    plugins: {      '@angular-eslint/template': angularTemplatePlugin    },    rules: {      ...angularTemplatePlugin.configs.recommended.rules    }  },
   {
     files: ['**/*.spec.ts'],
     languageOptions: {

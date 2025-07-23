@@ -22,10 +22,10 @@ jobs:
     - name: Install dependencies
       run: npm ci
 
-    - name: Lint
+    - name: Lint and Format Check
       run: |
-        npm run lint
-        npm run format:check
+        ./node_modules/.bin/eslint . --ext .ts,.html
+        ./node_modules/.bin/prettier --check "src/**/*.{ts,html,scss,json}"
 
     - name: Build
       run: npm run build --configuration=production
