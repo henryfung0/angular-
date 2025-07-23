@@ -25,6 +25,7 @@
     ]
   },
   "private": true,
+  "type": "module",
   "lint-staged": {
     "*.{ts,html,scss,json}": [
       "prettier --write",

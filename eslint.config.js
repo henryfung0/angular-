@@ -47,8 +47,29 @@ export default [
     plugins: {
       '@angular-eslint/template': angularTemplatePlugin
     },
+    processor: '@angular-eslint/template/extract-inline-html',
     rules: {
       ...angularTemplatePlugin.configs.recommended.rules
+    }
+  },
+  {
+    files: ['**/*.spec.ts'],
+    languageOptions: {
+      globals: {
+        describe: true,
+        beforeEach: true,
+        it: true,
+        expect: true
+      }
+    }
+  },
+  {
+    files: ['**/*.ts'],
+    languageOptions: {
+      globals: {
+        console: true,
+        process: true
+      }
     }
   }
 ];
